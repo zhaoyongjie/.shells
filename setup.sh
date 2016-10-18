@@ -27,3 +27,11 @@ fi
 if [ ! -f ~/.npmrc ]; then
     ln -s "$CURR_DIR/.npmrc" ~/.npmrc
 fi
+
+RIME_DIR=~/Library/Rime
+if [ -d ~/Library/Rime ]; then
+    ln -s "$CURR_DIR/squirrel/default.custom.yaml" $RIME_DIR/default.custom.yaml
+    ln -s "$CURR_DIR/squirrel/squirrel.custom.yaml" $RIME_DIR/squirrel.custom.yaml
+    ln -s "$CURR_DIR/squirrel/alternative.yaml" $RIME_DIR/alternative.yaml
+    ln -s "$CURR_DIR/squirrel/luna_pinyin.custom.yaml" $RIME_DIR/luna_pinyin.custom.yaml
+fi

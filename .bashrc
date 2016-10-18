@@ -27,4 +27,6 @@ alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -A'
 
-cd ~/workspace
+if [ ! -z $WORK_PATH ]; then
+    cd $WORK_PATH
+fi
