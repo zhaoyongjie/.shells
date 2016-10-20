@@ -28,6 +28,10 @@ if [ ! -f ~/.npmrc ]; then
     ln -s "$CURR_DIR/.npmrc" ~/.npmrc
 fi
 
+if [ -x "$(command -v ipython)" ]; then
+    ln -s "$CURR_DIR/ipython_config.py" ~/.ipython/profile_default/ipython_config.py
+fi
+
 RIME_DIR=~/Library/Rime
 if [ -d ~/Library/Rime ]; then
     ln -s "$CURR_DIR/squirrel/default.custom.yaml" $RIME_DIR/default.custom.yaml
