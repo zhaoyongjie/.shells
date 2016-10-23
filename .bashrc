@@ -40,3 +40,8 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -A'
+
+if [ ! -z $WORK_PATH ]; then
+    cd $WORK_PATH
+fi
+
