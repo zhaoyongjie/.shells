@@ -1,3 +1,17 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 export PS1='\u@:\W$ '
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$HOME/.npm-packages/bin:$PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
@@ -26,5 +40,3 @@ alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -A'
-
-cd ~/workspace
