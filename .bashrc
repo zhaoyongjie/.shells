@@ -36,7 +36,7 @@ fi
 
 source $HOME/.git-completion.bash
 
-alias grep='grep --color=auto'
+alias grep='grep -In --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components'
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -A'
