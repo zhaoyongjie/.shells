@@ -36,10 +36,12 @@ fi
 
 source $HOME/.git-completion.bash
 
-alias grep='grep -In --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components'
+alias grep='grep -I --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components'
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -A'
+
+unset GREP_OPTIONS
 
 if [ ! -z $WORK_PATH ]; then
     cd $WORK_PATH
