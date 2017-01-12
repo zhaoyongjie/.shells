@@ -28,12 +28,12 @@ if [ ! -f ~/.npmrc ]; then
     ln -s "$CURR_DIR/.npmrc" ~/.npmrc
 fi
 
-if [ -x "$(command -v ipython)" ]; then
+if [[ -x "$(command -v ipython)" && ! -f "$CURR_DIR/ipython_config.py" ]]; then
     ln -s "$CURR_DIR/ipython_config.py" ~/.ipython/profile_default/ipython_config.py
 fi
 
 RIME_DIR=~/Library/Rime
-if [ -d ~/Library/Rime ]; then
+if [[ -d ~/Library/Rime && ! -f "$CURR_DIR/squirrel/default.custom.yaml" ]]; then
     ln -s "$CURR_DIR/squirrel/default.custom.yaml" $RIME_DIR/default.custom.yaml
     ln -s "$CURR_DIR/squirrel/squirrel.custom.yaml" $RIME_DIR/squirrel.custom.yaml
     ln -s "$CURR_DIR/squirrel/alternative.yaml" $RIME_DIR/alternative.yaml
