@@ -13,7 +13,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 export PS1='\u@:\W$ '
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$HOME/.npm-packages/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/go/libexec/bin:$HOME/.npm-packages/bin:$PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
