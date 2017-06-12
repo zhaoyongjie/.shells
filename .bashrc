@@ -19,6 +19,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 export TERM=xterm-256color
 export VIRTUALENV_PYTHON=/usr/local/opt/python/bin/python
+export PIP_CONFIG_FILE=$HOME/.pip.conf
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
