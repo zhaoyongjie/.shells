@@ -12,13 +12,15 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+LOCAL_PATH=/usr/local/opt
+
 export PS1='\u@:\W$ '
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/go/libexec/bin:$HOME/.npm-packages/bin:$PATH
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+export PATH=$LOCAL_PATH/coreutils/libexec/gnubin:$LOCAL_PATH/python/libexec/bin:$LOCAL_PATH/go/libexec/bin:$HOME/.npm-packages/bin:/usr/local/sbin:$PATH
+export MANPATH=$LOCAL_PATH/coreutils/libexec/gnuman:$MANPATH
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 export TERM=xterm-256color
-export VIRTUALENV_PYTHON=/usr/local/opt/python/bin/python
+export VIRTUALENV_PYTHON=$LOCAL_PATH/python/bin/python
 export PIP_CONFIG_FILE=$HOME/.pip.conf
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
