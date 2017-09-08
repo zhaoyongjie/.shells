@@ -28,6 +28,10 @@ if [ ! -f ~/.npmrc ]; then
     ln -s "$CURR_DIR/.npmrc" ~/.npmrc
 fi
 
+if [ ! -f ~/.pip.conf ]; then
+    ln -s "$CURR_DIR/.pip.conf" ~/.pip.conf
+fi
+
 if [[ -x "$(command -v ipython)" && ! -f "$CURR_DIR/ipython_config.py" ]]; then
     ln -s "$CURR_DIR/ipython_config.py" ~/.ipython/profile_default/ipython_config.py
 fi

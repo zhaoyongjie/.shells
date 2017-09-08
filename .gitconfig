@@ -8,3 +8,6 @@
     default=simple
 [merge]
     ff = no
+[user]
+	name = YongjieZhao
+	email = yongjie.zhao@yongjie.zhao
