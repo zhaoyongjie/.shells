@@ -15,13 +15,17 @@ HISTFILESIZE=2000
 LOCAL_PATH=/usr/local/opt
 
 export PS1='\u@:\W$ '
-export PATH=$LOCAL_PATH/coreutils/libexec/gnubin:$LOCAL_PATH/python/libexec/bin:$LOCAL_PATH/go/libexec/bin:$HOME/.npm-packages/bin:/usr/local/sbin:$PATH
-export MANPATH=$LOCAL_PATH/coreutils/libexec/gnuman:$MANPATH
+
+if [[ $(uname) == 'Darwin' ]]; then
+    export PATH=$LOCAL_PATH/coreutils/libexec/gnubin:$LOCAL_PATH/python/libexec/bin:$LOCAL_PATH/go/libexec/bin:$HOME/.npm-packages/bin:/usr/local/sbin:$PATH
+    export MANPATH=$LOCAL_PATH/coreutils/libexec/gnuman:$MANPATH
+fi
+
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
-export TERM=xterm-256color
 export VIRTUALENV_PYTHON=$LOCAL_PATH/python/bin/python
-export PIP_CONFIG_FILE=$HOME/.pip.conf
+
+export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
