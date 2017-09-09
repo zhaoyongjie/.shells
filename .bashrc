@@ -17,10 +17,21 @@ LOCAL_PATH=/usr/local/opt
 export PS1='\u@:\W$ '
 
 if [[ $(uname) == 'Darwin' ]]; then
-    export PATH=$LOCAL_PATH/coreutils/libexec/gnubin:$LOCAL_PATH/python/libexec/bin:$LOCAL_PATH/go/libexec/bin:$HOME/.npm-packages/bin:/usr/local/sbin:$PATH
+    PATH_ARRAY=(
+        $LOCAL_PATH/coreutils/libexec/gnubin
+        $LOCAL_PATH/python/libexec/bin
+        $LOCAL_PATH/go/libexec/bin
+        $LOCAL_PATH/node@6/bin
+        $HOME/.npm-packages/bin
+        /usr/local/sbin
+        $PATH
+    )
+
+    export PATH=$( printf "%s:" "${PATH_ARRAY[@]}" )
     export MANPATH=$LOCAL_PATH/coreutils/libexec/gnuman:$MANPATH
 fi
 
+export PIP_CONFIG_FILE=$HOME/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 export VIRTUALENV_PYTHON=$LOCAL_PATH/python/bin/python
