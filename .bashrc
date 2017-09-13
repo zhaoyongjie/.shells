@@ -34,7 +34,7 @@ fi
 export PIP_CONFIG_FILE=$HOME/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
-export VIRTUALENV_PYTHON=$LOCAL_PATH/python/bin/python
+# export VIRTUALENV_PYTHON=$LOCAL_PATH/python/bin/python
 
 export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8

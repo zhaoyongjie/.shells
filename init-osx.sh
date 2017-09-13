@@ -56,6 +56,14 @@ if [[ $(uname) == 'Darwin' ]]; then
     pip install ipython virtualenvwrapper
     pip3 install ipython
     . install.sh
+
+    read -p "Are you want auto starting syncthing? (y/n) " -n 1 -r
+    echo    # (optional) move to a new line
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        brew services start syncthing
+    fi
+
 else
     echo 'Run script must be on MACOS'
 fi
