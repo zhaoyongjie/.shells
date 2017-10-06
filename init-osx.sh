@@ -53,8 +53,8 @@ if [[ $(uname) == 'Darwin' ]]; then
     brew tap caskroom/versions
     brew cask install $CASK_APPS
     brew install $APPS --with-default-names
-    pip install ipython virtualenvwrapper
-    pip3 install ipython
+    pip install ipython virtualenvwrapper ipdb rope jedi flake8 importmagic autopep8 yapf
+    pip3 install ipython ipdb
     . install.sh
 
     read -p "Are you want auto starting syncthing? (y/n) " -n 1 -r
