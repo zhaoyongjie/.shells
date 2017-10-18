@@ -31,12 +31,14 @@ APPS='
   gnu-indent
   gnu-getopt
   grep
+  make
   tree
   wget
   tmux
   httpie
   nmap
   mtr
+  iproute2mac
   siege
   syncthing
   python
@@ -63,7 +65,6 @@ if [[ $(uname) == 'Darwin' ]]; then
     then
         brew services start syncthing
     fi
-
 else
     echo 'Run script must be on MACOS'
 fi
