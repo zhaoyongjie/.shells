@@ -16,6 +16,11 @@ CASK_APPS='
   vox
   neteasemusic
   squirrel
+  typora
+  burp-suite
+  wireshark
+  virtualbox
+  intellij-idea-ce
 '
 
 APPS='
