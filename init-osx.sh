@@ -8,11 +8,10 @@ CASK_APPS='
   google-chrome
   firefox
   shadowsocksx
-  balsamiq-mockups
+  tunnelblick
   adobe-acrobat-reader
   dash2
   thunderbird
-  tunnelblick
   vox
   neteasemusic
   squirrel
@@ -21,6 +20,9 @@ CASK_APPS='
   wireshark
   virtualbox
   intellij-idea-ce
+  pycharm-ce
+  grammarly
+  gimp
 '
 
 APPS='
@@ -48,6 +50,7 @@ APPS='
   syncthing
   python
   python3
+  pyenv
   node@6
   yarn --without-node
   go
