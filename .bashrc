@@ -20,6 +20,7 @@ if [[ $(uname) == 'Darwin' ]]; then
     PATH_ARRAY=(
         $LOCAL_PATH/coreutils/libexec/gnubin
         $LOCAL_PATH/python/libexec/bin
+        $HOME/.pyenv/shims
         $LOCAL_PATH/go/libexec/bin
         $LOCAL_PATH/node@6/bin
         $HOME/.npm-packages/bin
@@ -34,7 +35,6 @@ fi
 export PIP_CONFIG_FILE=$HOME/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
-# export VIRTUALENV_PYTHON=$LOCAL_PATH/python/bin/python
 
 export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8

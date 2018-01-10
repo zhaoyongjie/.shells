@@ -44,6 +44,7 @@ APPS='
   tmux
   httpie
   nmap
+  netcat
   mtr
   iproute2mac
   siege

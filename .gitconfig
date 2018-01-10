@@ -6,8 +6,6 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
     default=simple
-[merge]
-    ff = no
 [user]
-    name = YongjieZhao
+    name = Yongjie Zhao
     email = yongjie.zhao@gmail.com
