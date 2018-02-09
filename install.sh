@@ -1,5 +1,9 @@
 CURR_DIR=`pwd`
 
+if [ ! -f ~/.bashrc ]; then
+    ln -s "$CURR_DIR/.bashrc" ~/.bashrc
+fi
+
 if [ ! -f ~/.eslintrc ]; then
     ln -s "$CURR_DIR/.eslintrc" ~/.eslintrc
 fi
