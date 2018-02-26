@@ -7,7 +7,7 @@ CASK_APPS='
   rowanj-gitx
   google-chrome
   firefox
-  shadowsocksx
+  shadowsocksx-ng
   tunnelblick
   adobe-acrobat-reader
   dash2
