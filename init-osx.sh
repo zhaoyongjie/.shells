@@ -9,6 +9,7 @@ CASK_APPS='
   firefox
   shadowsocksx-ng
   tunnelblick
+  torbrowser
   adobe-acrobat-reader
   dash2
   thunderbird
