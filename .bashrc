@@ -30,6 +30,7 @@ if [[ $(uname) == 'Darwin' ]]; then
 
     export PATH=$( printf "%s:" "${PATH_ARRAY[@]}" )
     export MANPATH=$LOCAL_PATH/coreutils/libexec/gnuman:$MANPATH
+    export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
 export PIP_CONFIG_FILE=$HOME/.pip.conf
