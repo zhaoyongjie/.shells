@@ -50,8 +50,7 @@ APPS='
   iproute2mac
   siege
   syncthing
-  python
-  python3
+  python@2
   pyenv
   node@6
   yarn --without-node
