@@ -23,7 +23,9 @@ CASK_APPS='
   intellij-idea-ce
   pycharm-ce
   grammarly
-  gimp
+  skitch
+  vlc
+  java8
 '
 
 APPS='
@@ -49,12 +51,14 @@ APPS='
   mtr
   iproute2mac
   siege
+  tor
   syncthing
   python@2
   pyenv
   node@6
   yarn --without-node
   go
+  maven
 '
 
 if [[ $(uname) == 'Darwin' ]]; then

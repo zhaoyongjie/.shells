@@ -19,11 +19,13 @@ export PS1='\u@:\W$ '
 if [[ $(uname) == 'Darwin' ]]; then
     PATH_ARRAY=(
         $LOCAL_PATH/coreutils/libexec/gnubin
-        $HOME/.pyenv/shims
-        /usr/local/bin
-        /usr/local/sbin
+        # $HOME/.pyenv/shims
+
         $LOCAL_PATH/node@6/bin
         $HOME/.npm-packages/bin
+
+        $LOCAL_PATH/go/libexec/bin
+        /usr/local/sbin
         $PATH
     )
 
