@@ -59,6 +59,7 @@ APPS='
   yarn --without-node
   go
   maven
+  textql
 '
 
 if [[ $(uname) == 'Darwin' ]]; then
