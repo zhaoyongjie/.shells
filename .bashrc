@@ -42,7 +42,7 @@ export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+if [[ -x "$(command -v virtualenvwrapper.sh)" ]]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
@@ -52,6 +52,10 @@ if [ -f ~/.shells/git-envs ]; then
     # export GIT_COMMITTER_NAME=
     # export GIT_COMMITTER_EMAIL=
     source ~/.shells/git-envs
+fi
+
+if [[ -x "$(command -v pygmentize)" ]]; then
+    alias pat='pygmentize -g -O style=colorful,linenos=1'
 fi
 
 source $HOME/.git-completion.bash
