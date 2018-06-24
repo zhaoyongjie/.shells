@@ -69,7 +69,8 @@ if [[ $(uname) == 'Darwin' ]]; then
     brew tap caskroom/versions
     brew cask install $CASK_APPS
     brew install $APPS --with-default-names
-    pip install ipython virtualenvwrapper ipdb rope jedi flake8 importmagic autopep8 yapf
+    pip install --upgrade pip
+    pip install ipython virtualenvwrapper ipdb flake8
     pip3 install ipython ipdb
     . install.sh
 
