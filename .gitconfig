@@ -4,6 +4,7 @@
     br = branch
     st = status
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ls-subtree = !"git log | grep git-subtree-dir | awk '{ print $2 }'"
 [push]
     default=simple
 [user]

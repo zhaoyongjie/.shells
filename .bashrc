@@ -34,6 +34,9 @@ if [[ $(uname) == 'Darwin' ]]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+export GOBIN=$HOME/go/bin
+export PATH=$PATH:$GOBIN
+
 export PIP_CONFIG_FILE=$HOME/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
