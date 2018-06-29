@@ -54,8 +54,9 @@ APPS='
   tor
   syncthing
   python@2
+  jupyter
   pyenv
-  node@6
+  node@8
   yarn --without-node
   go
   maven

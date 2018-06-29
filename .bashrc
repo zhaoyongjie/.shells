@@ -21,7 +21,7 @@ if [[ $(uname) == 'Darwin' ]]; then
         $LOCAL_PATH/coreutils/libexec/gnubin
         # $HOME/.pyenv/shims
 
-        $LOCAL_PATH/node@6/bin
+        $LOCAL_PATH/node@8/bin
         $HOME/.npm-packages/bin
 
         $LOCAL_PATH/go/libexec/bin
