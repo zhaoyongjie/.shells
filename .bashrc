@@ -21,8 +21,8 @@ if [[ $(uname) == 'Darwin' ]]; then
         $LOCAL_PATH/coreutils/libexec/gnubin
         # $HOME/.pyenv/shims
 
-        $LOCAL_PATH/node@8/bin
         $HOME/.npm-packages/bin
+        $LOCAL_PATH/node@8/bin
 
         $LOCAL_PATH/go/libexec/bin
         /usr/local/sbin
@@ -39,14 +39,13 @@ export PATH=$PATH:$GOBIN
 
 export PIP_CONFIG_FILE=$HOME/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/workspace
 
 export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 if [[ -x "$(command -v virtualenvwrapper.sh)" ]]; then
-    source /usr/local/bin/virtualenvwrapper.sh
+    source $(command -v virtualenvwrapper.sh)
 fi
 
 if [ -f ~/.shells/git-envs ]; then
@@ -74,3 +73,4 @@ if [ ! -z $WORK_PATH ]; then
     cd $WORK_PATH
 fi
 
+export PATH=$HOME/.pyenv/bin:$HOME/.pyenv/versions/2.7.15/bin:$PATH # edit by superset
