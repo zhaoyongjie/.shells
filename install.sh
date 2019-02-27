@@ -4,14 +4,6 @@ if [ ! -f ~/.bashrc ]; then
     ln -s "$CURR_DIR/.bashrc" ~/.bashrc
 fi
 
-if [ ! -f ~/.eslintrc ]; then
-    ln -s "$CURR_DIR/.eslintrc" ~/.eslintrc
-fi
-
-if [ ! -f ~/.pylintrc ]; then
-    ln -s "$CURR_DIR/.pylintrc" ~/.pylintrc
-fi
-
 if [ ! -f ~/.git-completion.bash ]; then
     ln -s "$CURR_DIR/.git-completion.bash" ~/.git-completion.bash
 fi
