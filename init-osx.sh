@@ -1,5 +1,5 @@
 CASK_APPS='
-  psequel
+  postico
   sequel-pro
   docker
   iterm2
