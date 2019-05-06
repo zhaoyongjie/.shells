@@ -39,14 +39,14 @@ export PATH=$PATH:$GOBIN
 
 export PIP_CONFIG_FILE=$HOME/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+if [[ -x "$(command -v virtualenvwrapper.sh)" ]]; then
+    source $(command -v virtualenvwrapper.sh)
+fi
 
 export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-if [[ -x "$(command -v virtualenvwrapper.sh)" ]]; then
-    source $(command -v virtualenvwrapper.sh)
-fi
 
 if [ -f ~/.shells/git-envs ]; then
     # export GIT_AUTHOR_NAME=
@@ -72,5 +72,3 @@ unset GREP_OPTIONS
 if [ ! -z $WORK_PATH ]; then
     cd $WORK_PATH
 fi
-
-export PATH=$HOME/.pyenv/bin:$HOME/.pyenv/versions/2.7.15/bin:$PATH # edit by superset
