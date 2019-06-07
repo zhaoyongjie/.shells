@@ -44,14 +44,6 @@ pyenv virtualenvwrapper
 export PIP_CONFIG_FILE=$HOME/.shells/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
 
-if [ -f ~/.shells/git-envs ]; then
-    # export GIT_AUTHOR_NAME=
-    # export GIT_AUTHOR_EMAIL=
-    # export GIT_COMMITTER_NAME=
-    # export GIT_COMMITTER_EMAIL=
-    source ~/.shells/git-envs
-fi
-
 if [[ -x "$(command -v pygmentize)" ]]; then
     alias pat='pygmentize -g -O style=colorful,linenos=1'
 fi
