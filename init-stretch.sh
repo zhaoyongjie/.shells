@@ -10,9 +10,7 @@ APPS='
     libpng-dev
     libfreetype6-dev
     libsasl2-dev
-    libmysqlclient-dev
     tk-dev
-
     apt-transport-https
     ca-certificates
     curl
@@ -20,22 +18,29 @@ APPS='
     software-properties-common
     openjdk-8-jdk
     git
+    sudo
+    vim
+    net-tools
+    httpie
+    mysql-client
 '
 sudo apt update && sudo apt install -y $APPS
+
+# install docker-ce
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+sudo apt update && sudo apt install -y docker-ce
+sudo usermod -aG docker $USER
 
-curl -sL https://deb.nodesource.com/setup_8.x | sudo bash
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-sudo add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
-
-sudo apt update && sudo apt install nodejs yarn docker-ce
-
+# install python
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-pyenv install 2.7.15
-pyenv install 3.6.6
+$HOME/.pyenv/bin/pyenv install 2.7.16
+$HOME/.pyenv/bin/pyenv install 3.6.8
+git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
+
+# install node
+curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 sudo apt-add-repository -y ppa:adrozdoff/emacs
 sudo apt update
 sudo apt install emacs25
-

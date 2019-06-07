@@ -52,12 +52,6 @@ APPS='
   iproute2mac
   siege
   tor
-  syncthing
-  python@2
-  jupyter
-  pyenv
-  node@8
-  yarn --without-node
   go
   maven
   textql
@@ -70,9 +64,16 @@ if [[ $(uname) == 'Darwin' ]]; then
     brew tap caskroom/versions
     brew cask install $CASK_APPS
     brew install $APPS --with-default-names
-    pip install --upgrade pip
-    pip install ipython virtualenvwrapper ipdb flake8
-    pip3 install ipython ipdb
+
+    # install python
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    $HOME/.pyenv/bin/pyenv install 2.7.16
+    $HOME/.pyenv/bin/pyenv install 3.6.8
+    git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
+
+    # install node
+    curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
     . install.sh
 
     read -p "Are you want auto starting syncthing? (y/n) " -n 1 -r

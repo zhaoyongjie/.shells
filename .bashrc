@@ -12,41 +12,37 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-LOCAL_PATH=/usr/local/opt
-
-export PS1='\u@:\W$ '
-
-if [[ $(uname) == 'Darwin' ]]; then
-    PATH_ARRAY=(
-        $LOCAL_PATH/coreutils/libexec/gnubin
-        # $HOME/.pyenv/shims
-
-        $HOME/.npm-packages/bin
-        $LOCAL_PATH/node@8/bin
-
-        $LOCAL_PATH/go/libexec/bin
-        /usr/local/sbin
-        $PATH
-    )
-
-    export PATH=$( printf "%s:" "${PATH_ARRAY[@]}" )
-    export MANPATH=$LOCAL_PATH/coreutils/libexec/gnuman:$MANPATH
-    export JAVA_HOME=$(/usr/libexec/java_home)
-fi
-
-export GOBIN=$HOME/go/bin
-export PATH=$PATH:$GOBIN
-
-export PIP_CONFIG_FILE=$HOME/.pip.conf
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-if [[ -x "$(command -v virtualenvwrapper.sh)" ]]; then
-    source $(command -v virtualenvwrapper.sh)
-fi
-
 export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+if [[ $(uname) == 'Darwin' ]]; then
+    export PS1='\u@:\W$ '
+    LP=/usr/local/opt
+    export GOBIN=$HOME/go/bin
+    export MANPATH=$LP/coreutils/libexec/gnuman:$MANPATH
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    export PATH=$LP/coreutils/libexec/gnubin:$HOME/.npm-packages/bin:$LP/node@8/bin:$LP/go/libexec/bin:$GOBIN:/usr/local/sbin:$PATH
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
+if [[ $(uname) == 'Linux' ]]; then
+    # placeholder for Linux
+    echo 'placeholder' > /dev/null
+fi
+
+# This loads nvm
+export NVM_DIR=$HOME/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# This loads pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+pyenv global 3.6.8
+pyenv virtualenvwrapper
+export PIP_CONFIG_FILE=$HOME/.shells/.pip.conf
+export WORKON_HOME=$HOME/.virtualenvs
 
 if [ -f ~/.shells/git-envs ]; then
     # export GIT_AUTHOR_NAME=
@@ -59,8 +55,6 @@ fi
 if [[ -x "$(command -v pygmentize)" ]]; then
     alias pat='pygmentize -g -O style=colorful,linenos=1'
 fi
-
-source $HOME/.git-completion.bash
 
 alias grep='grep -I --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist'
 alias ls='ls --color=auto'
