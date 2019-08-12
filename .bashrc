@@ -22,7 +22,7 @@ if [[ $(uname) == 'Darwin' ]]; then
     export GOBIN=$HOME/go/bin
     export MANPATH=$LP/coreutils/libexec/gnuman:$MANPATH
     export JAVA_HOME=$(/usr/libexec/java_home)
-    export PATH=$LP/coreutils/libexec/gnubin:$HOME/.npm-packages/bin:$LP/node@8/bin:$LP/go/libexec/bin:$GOBIN:/usr/local/sbin:$PATH
+    export PATH=$LP/coreutils/libexec/gnubin:$LP/go/libexec/bin:$GOBIN:/usr/local/sbin:$PATH
     source /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
@@ -30,10 +30,6 @@ if [[ $(uname) == 'Linux' ]]; then
     # placeholder for Linux
     echo 'placeholder' > /dev/null
 fi
-
-# This loads nvm
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # This loads pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -46,6 +42,10 @@ export WORKON_HOME=$HOME/.virtualenvs
 
 if [[ -x "$(command -v pygmentize)" ]]; then
     alias pat='pygmentize -g -O style=colorful,linenos=1'
+fi
+
+if [[ -f "$HOME/.nvm/nvm.sh" ]]; then
+    source "$HOME/.nvm/nvm.sh"
 fi
 
 alias grep='grep -I --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist'
