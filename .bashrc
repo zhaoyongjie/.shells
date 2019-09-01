@@ -22,7 +22,7 @@ if [[ $(uname) == 'Darwin' ]]; then
     export GOBIN=$HOME/go/bin
     export MANPATH=$LP/coreutils/libexec/gnuman:$MANPATH
     export JAVA_HOME=$(/usr/libexec/java_home)
-    export PATH=$LP/coreutils/libexec/gnubin:$LP/go/libexec/bin:$GOBIN:/usr/local/sbin:$PATH
+    export PATH=$LP/grep/libexec/gnubin:$LP/gnu-tar/libexec/gnubin:$LP/gnu-sed/libexec/gnubin:$LP/coreutils/libexec/gnubin:$LP/go/libexec/bin:$GOBIN:/usr/local/sbin:$PATH
     source /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
@@ -44,9 +44,9 @@ if [[ -x "$(command -v pygmentize)" ]]; then
     alias pat='pygmentize -g -O style=colorful,linenos=1'
 fi
 
-if [[ -f "$HOME/.nvm/nvm.sh" ]]; then
-    source "$HOME/.nvm/nvm.sh"
-fi
+#if [[ -f "$HOME/.nvm/nvm.sh" ]]; then
+#    source "$HOME/.nvm/nvm.sh"
+#fi
 
 alias grep='grep -I --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist'
 alias ls='ls --color=auto'
