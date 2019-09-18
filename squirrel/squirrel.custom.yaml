@@ -3,3 +3,8 @@ patch:
   style/color_scheme: lost_temple
   style/corner_radius: 5
   style/font_point: 18
+
+app_options:
+  org.gnu.Emacs:
+    ascii_mode: false
+    no_inline: false
