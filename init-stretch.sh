@@ -23,6 +23,7 @@ APPS='
     net-tools
     httpie
     mysql-client
+    gnumeric
 '
 sudo apt update && sudo apt install -y $APPS
 
@@ -43,4 +44,4 @@ curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 sudo apt-add-repository -y ppa:adrozdoff/emacs
 sudo apt update
-sudo apt install emacs25
+sudo apt install -y emacs25

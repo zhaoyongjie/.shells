@@ -13,15 +13,11 @@ CASK_APPS='
   adobe-acrobat-reader
   dash2
   thunderbird
-  vox
-  neteasemusic
   squirrel
   typora
   burp-suite
   wireshark
   virtualbox
-  intellij-idea-ce
-  pycharm-ce
   grammarly
   skitch
   vlc
@@ -55,6 +51,7 @@ APPS='
   go
   maven
   textql
+  gnumeric
 '
 
 if [[ $(uname) == 'Darwin' ]]; then
