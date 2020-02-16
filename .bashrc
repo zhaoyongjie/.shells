@@ -22,8 +22,13 @@ if [[ $(uname) == 'Darwin' ]]; then
     export GOBIN=$HOME/go/bin
     export MANPATH=$LP/coreutils/libexec/gnuman:$MANPATH
     export JAVA_HOME=$(/usr/libexec/java_home)
-    export PATH=$LP/grep/libexec/gnubin:$LP/gnu-tar/libexec/gnubin:$LP/gnu-sed/libexec/gnubin:$LP/coreutils/libexec/gnubin:$LP/go/libexec/bin:$GOBIN:/usr/local/sbin:$PATH
+    export PATH=$LP/grep/libexec/gnubin:$LP/gnu-tar/libexec/gnubin:$LP/gnu-sed/libexec/gnubin:$LP/coreutils/libexec/gnubin:$LP/go/libexec/bin:$GOBIN:/usr/local/sbin:$LP/openssl@1.1/bin:$PATH
     source /usr/local/etc/bash_completion.d/git-completion.bash
+
+    # for compilers to find openssl and for pkg-config to find openssl
+    export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+    export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+    export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 fi
 
 if [[ $(uname) == 'Linux' ]]; then
