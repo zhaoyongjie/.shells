@@ -16,13 +16,11 @@ APPS='
     curl
     gnupg2
     software-properties-common
-    openjdk-8-jdk
     git
     sudo
     vim
     net-tools
     httpie
-    mysql-client
     gnumeric
 '
 sudo apt update && sudo apt install -y $APPS
@@ -37,7 +35,6 @@ sudo usermod -aG docker $USER
 
 # install python
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-$HOME/.pyenv/bin/pyenv install 2.7.16
 $HOME/.pyenv/bin/pyenv install 3.6.8
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 
