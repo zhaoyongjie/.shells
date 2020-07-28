@@ -29,6 +29,7 @@ if [[ $(uname) == 'Darwin' ]]; then
     export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
     export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
     export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+    export BASH_SILENCE_DEPRECATION_WARNING=1
 fi
 
 if [[ $(uname) == 'Linux' ]]; then
@@ -52,6 +53,10 @@ fi
 #if [[ -f "$HOME/.nvm/nvm.sh" ]]; then
 #    source "$HOME/.nvm/nvm.sh"
 #fi
+
+if [[ -x "$(command -v direnv)" ]]; then
+    eval "$(direnv hook bash)"
+fi
 
 alias grep='grep -I --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist'
 alias ls='ls --color=auto'

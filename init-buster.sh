@@ -22,6 +22,7 @@ APPS='
     net-tools
     httpie
     gnumeric
+    rsync
 '
 sudo apt update && sudo apt install -y $APPS
 
@@ -39,7 +40,7 @@ $HOME/.pyenv/bin/pyenv install 3.6.8
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 
 # install node
-curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # install openJDK
 wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz -O /tmp/openjdk.tar.gz

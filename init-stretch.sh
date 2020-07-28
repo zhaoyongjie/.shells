@@ -24,6 +24,7 @@ APPS='
     httpie
     mysql-client
     gnumeric
+    rsync
 '
 sudo apt update && sudo apt install -y $APPS
 
@@ -42,7 +43,7 @@ $HOME/.pyenv/bin/pyenv install 3.6.8
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 
 # install node
-curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 sudo apt-add-repository -y ppa:adrozdoff/emacs
 sudo apt update
