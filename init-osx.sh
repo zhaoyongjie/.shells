@@ -1,6 +1,4 @@
 CASK_APPS='
-  postico
-  sequel-pro
   docker
   iterm2
   emacs
@@ -9,19 +7,14 @@ CASK_APPS='
   firefox
   shadowsocksx-ng
   tunnelblick
-  torbrowser
   adobe-acrobat-reader
-  dash2
-  thunderbird
   squirrel
   typora
   burp-suite
   wireshark
-  virtualbox
   grammarly
   skitch
   vlc
-  java8
 '
 
 APPS='
@@ -55,21 +48,19 @@ APPS='
 '
 
 if [[ $(uname) == 'Darwin' ]]; then
-    xcode-select --install
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew tap caskroom/cask
-    brew tap caskroom/versions
+    brew tap homebrew/cask
     brew cask install $CASK_APPS
-    brew install $APPS --with-default-names
+    brew install $APPS
 
     # install python
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    $HOME/.pyenv/bin/pyenv install 2.7.16
-    $HOME/.pyenv/bin/pyenv install 3.6.8
+    $HOME/.pyenv/bin/pyenv install 2.7.18
+    $HOME/.pyenv/bin/pyenv install 3.8.6
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 
     # install node
-    curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+    curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 
     . install.sh
 

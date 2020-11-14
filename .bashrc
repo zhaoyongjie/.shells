@@ -41,7 +41,7 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-pyenv global 3.6.8
+pyenv global 3.8.6
 pyenv virtualenvwrapper
 export PIP_CONFIG_FILE=$HOME/.shells/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
@@ -68,3 +68,4 @@ unset GREP_OPTIONS
 if [ ! -z $WORK_PATH ]; then
     cd $WORK_PATH
 fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
