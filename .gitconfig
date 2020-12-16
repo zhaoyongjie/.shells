@@ -7,6 +7,8 @@
     ls-subtree = !"git log | grep git-subtree-dir | awk '{ print $2 }'"
 [push]
     default=simple
+[pull]
+  ff = only
 [user]
     name = Yongjie Zhao
     email = yongjie.zhao@gmail.com
