@@ -65,6 +65,10 @@ alias la='ls -A'
 
 unset GREP_OPTIONS
 
-if [ ! -z $WORK_PATH ]; then
+if [[ -n $WORK_PATH ]]; then
     cd $WORK_PATH
+fi
+
+if [[ -n $WORKSPACE ]]; then
+    cd $WORKSPACE
 fi
