@@ -36,7 +36,7 @@ sudo usermod -aG docker $USER
 
 # install python
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-$HOME/.pyenv/bin/pyenv install 3.6.8
+$HOME/.pyenv/bin/pyenv install 3.8.6
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 
 # install node
@@ -46,6 +46,6 @@ curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz -O /tmp/openjdk.tar.gz
 tar -xf /tmp/openjdk.tar.gz -C /opt
 
-sudo apt-add-repository -y ppa:adrozdoff/emacs
-sudo apt update
-sudo apt install -y emacs25
+# sudo apt-add-repository -y ppa:adrozdoff/emacs
+# sudo apt update
+# sudo apt install -y emacs25

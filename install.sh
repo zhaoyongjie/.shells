@@ -4,10 +4,6 @@ if [ ! -f ~/.bashrc ]; then
     ln -s "$CURR_DIR/.bashrc" ~/.bashrc
 fi
 
-if [ ! -f ~/.git-completion.bash ]; then
-    ln -s "$CURR_DIR/.git-completion.bash" ~/.git-completion.bash
-fi
-
 if [ ! -f ~/.gitconfig ]; then
     ln -s "$CURR_DIR/.gitconfig" ~/.gitconfig
 fi
