@@ -41,7 +41,7 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-pyenv global 3.8.6
+pyenv global ${PYTHON_GLOBAL_VERSION:-'3.8.6'}
 pyenv virtualenvwrapper
 export PIP_CONFIG_FILE=$HOME/.shells/.pip.conf
 export WORKON_HOME=$HOME/.virtualenvs
