@@ -23,6 +23,7 @@ APPS='
     httpie
     gnumeric
     rsync
+    liblzma-dev
 '
 sudo apt update && sudo apt install -y $APPS
 
