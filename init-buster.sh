@@ -24,6 +24,10 @@ APPS='
     gnumeric
     rsync
     liblzma-dev
+    tmux
+    supervisor
+    smartmontools
+    lm-sensors
 '
 sudo apt update && sudo apt install -y $APPS
 
