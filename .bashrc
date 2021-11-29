@@ -26,7 +26,7 @@ if [[ $(uname) == 'Darwin' ]]; then
 $HOMEBREW_PREFIX/grep/libexec/gnubin:\
 $HOMEBREW_PREFIX/gnu-tar/libexec/gnubin:\
 $HOMEBREW_PREFIX/gnu-sed/libexec/gnubin:\
-$HOMEBREW_PREFIX/findutils/libexec/gnubin\
+$HOMEBREW_PREFIX/findutils/libexec/gnubin:\
 $HOMEBREW_PREFIX/coreutils/libexec/gnubin:\
 $HOMEBREW_PREFIX/openssl@1.1/bin:\
 $HOMEBREW_PREFIX/go/libexec/bin:\
