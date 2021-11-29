@@ -49,7 +49,7 @@ curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # install openJDK
 wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz -O /tmp/openjdk.tar.gz
-tar -xf /tmp/openjdk.tar.gz -C /opt
+sudo tar -xf /tmp/openjdk.tar.gz -C /opt
 
 # sudo apt-add-repository -y ppa:adrozdoff/emacs
 # sudo apt update

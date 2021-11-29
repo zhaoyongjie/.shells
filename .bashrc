@@ -18,11 +18,22 @@ export LANG=en_US.UTF-8
 
 if [[ $(uname) == 'Darwin' ]]; then
     export PS1='\u@:\W$ '
-    LP=/usr/local/opt
+    HOMEBREW_PREFIX=/usr/local/opt
     export GOBIN=$HOME/go/bin
-    export MANPATH=$LP/coreutils/libexec/gnuman:$MANPATH
+    export MANPATH=$HOMEBREW_PREFIX/coreutils/libexec/gnuman:$MANPATH
     export JAVA_HOME=$(/usr/libexec/java_home)
-    export PATH=$LP/grep/libexec/gnubin:$LP/gnu-tar/libexec/gnubin:$LP/gnu-sed/libexec/gnubin:$LP/coreutils/libexec/gnubin:$LP/go/libexec/bin:$GOBIN:/usr/local/sbin:$LP/openssl@1.1/bin:$PATH
+    export PATH="\
+$HOMEBREW_PREFIX/grep/libexec/gnubin:\
+$HOMEBREW_PREFIX/gnu-tar/libexec/gnubin:\
+$HOMEBREW_PREFIX/gnu-sed/libexec/gnubin:\
+$HOMEBREW_PREFIX/findutils/libexec/gnubin\
+$HOMEBREW_PREFIX/coreutils/libexec/gnubin:\
+$HOMEBREW_PREFIX/openssl@1.1/bin:\
+$HOMEBREW_PREFIX/go/libexec/bin:\
+$JAVA_HOME:\
+$GOBIN:\
+/usr/local/sbin:\
+$PATH"
     source /usr/local/etc/bash_completion.d/git-completion.bash
 
     # for compilers to find openssl and for pkg-config to find openssl
@@ -34,7 +45,8 @@ fi
 
 if [[ $(uname) == 'Linux' ]]; then
     # placeholder for Linux
-    echo 'placeholder' > /dev/null
+    export JAVA_HOME=$(/opt/jdk8u242-b08)
+    export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 # This loads pyenv
