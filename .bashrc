@@ -51,7 +51,7 @@ fi
 
 # This loads pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 eval "$(pyenv init -)"
 pyenv global ${PYTHON_GLOBAL_VERSION:-'3.8.6'}
 pyenv virtualenvwrapper
@@ -77,10 +77,11 @@ alias la='ls -A'
 
 unset GREP_OPTIONS
 
-if [[ -n $WORK_PATH ]]; then
-    cd $WORK_PATH
-fi
-
 if [[ -n $WORKSPACE ]]; then
     cd $WORKSPACE
 fi
+
+if [[ -f $HOME/.cargo/env ]]; then
+    . "$HOME/.cargo/env"
+fi
+
