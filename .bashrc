@@ -45,7 +45,7 @@ fi
 
 if [[ $(uname) == 'Linux' ]]; then
     # placeholder for Linux
-    export JAVA_HOME=$(/opt/jdk8u242-b08)
+    export JAVA_HOME=/opt/jdk8u242-b08
     export PATH=$JAVA_HOME/bin:$PATH
 fi
 
