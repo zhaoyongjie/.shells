@@ -70,10 +70,14 @@ if [[ -x "$(command -v direnv)" ]]; then
     eval "$(direnv hook bash)"
 fi
 
-alias grep='grep -I --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist'
+alias grep='grep -IE --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist'
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -A'
+function sn() {
+    grep -ri"$2" --exclude=*.{html,} "$1" ~/Dropbox/Notebooks/ ~/Dropbox/Diary/
+}
+alias sn=sn
 
 unset GREP_OPTIONS
 

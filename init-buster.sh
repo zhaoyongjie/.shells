@@ -31,21 +31,22 @@ APPS='
 '
 sudo apt update && sudo apt install -y $APPS
 
-# install docker-ce
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-sudo apt update && sudo apt install -y docker-ce
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod a+x /usr/local/bin/docker-compose
+# install docker and plugins
+sudo mkdir -m 0755 -p /etc/apt/keyrings && curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker $USER
 
 # install python
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-$HOME/.pyenv/bin/pyenv install 3.8.6
+$HOME/.pyenv/bin/pyenv install 3.9.16
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 
 # install node
-curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+# nvm install --lts
 
 # install openJDK
 wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u242b08.tar.gz -O /tmp/openjdk.tar.gz
