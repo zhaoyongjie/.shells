@@ -18,7 +18,7 @@ export LANG=en_US.UTF-8
 
 if [[ $(uname) == 'Darwin' ]]; then
     export PS1='\u@:\W$ '
-    HOMEBREW_PREFIX=/usr/local/opt
+    HOMEBREW_PREFIX=/opt/homebrew/opt
     export GOBIN=$HOME/go/bin
     export MANPATH=$HOMEBREW_PREFIX/coreutils/libexec/gnuman:$MANPATH
     export JAVA_HOME=$(/usr/libexec/java_home)
@@ -34,12 +34,15 @@ $JAVA_HOME:\
 $GOBIN:\
 /usr/local/sbin:\
 $PATH"
-    source /usr/local/etc/bash_completion.d/git-completion.bash
 
     # for compilers to find openssl and for pkg-config to find openssl
-    export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-    export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-    export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+    export LDFLAGS="-L$HOMEBREW_PREFIX/openssl@1.1/lib -L$HOMEBREW_PREFIX/zlib/lib -L$HOMEBREW_PREFIX/bzip2/lib"
+    export CPPFLAGS="-I$HOMEBREW_PREFIX/openssl@1.1/include -I$HOMEBREW_PREFIX/zlib/include -I$HOMEBREW_PREFIX/bzip2/include"
+    export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/openssl@1.1/lib/pkgconfig:$HOMEBREW_PREFIX/zlib/lib/pkgconfig"
+
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
     export BASH_SILENCE_DEPRECATION_WARNING=1
 fi
 
@@ -70,7 +73,7 @@ if [[ -x "$(command -v direnv)" ]]; then
     eval "$(direnv hook bash)"
 fi
 
-alias grep='grep -IE --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist'
+alias grep='ggrep -IE --color=auto --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=bower_components --exclude-dir=dist'
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -A'
