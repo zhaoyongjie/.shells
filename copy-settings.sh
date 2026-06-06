@@ -32,8 +32,8 @@ mkdir -p $HOME/.claude
 for f in CLAUDE.md settings.json; do
     target=$HOME/.claude/$f
     if [[ -L $target || ! -e $target ]]; then
-        ln -sfn "$CURR_DIR/claude/$f" "$target"
-        echo "linked $target -> $CURR_DIR/claude/$f"
+        ln -sfn "$CURR_DIR/agent/$f" "$target"
+        echo "linked $target -> $CURR_DIR/agent/$f"
     else
         echo "skipped $target: real file exists, move it away first"
     fi
@@ -42,8 +42,8 @@ done
 mkdir -p $HOME/.config/opencode $HOME/.codex
 for target in $HOME/.config/opencode/AGENTS.md $HOME/.codex/AGENTS.md; do
     if [[ -L $target || ! -e $target ]]; then
-        ln -sfn "$CURR_DIR/claude/CLAUDE.md" "$target"
-        echo "linked $target -> $CURR_DIR/claude/CLAUDE.md"
+        ln -sfn "$CURR_DIR/agent/CLAUDE.md" "$target"
+        echo "linked $target -> $CURR_DIR/agent/CLAUDE.md"
     fi
 done
 
