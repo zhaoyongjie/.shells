@@ -12,7 +12,6 @@ APPS_GUI='
 '
 
 APPS='
-    awscli
     bash-completion
     btop
     build-essential
@@ -24,7 +23,6 @@ APPS='
     ffmpeg
     fzf
     gawk
-    gh
     git
     golang
     httpie
@@ -33,20 +31,14 @@ APPS='
     jq
     libbz2-dev
     libffi-dev
-    libfreetype6-dev
     libimage-exiftool-perl
-    libldap2-dev
     liblzma-dev
-    libpng-dev
-    libpq-dev
     libreadline-dev
-    libsasl2-dev
     libsqlite3-dev
     libssl-dev
     lm-sensors
     maven
     mtr-tiny
-    netcat-openbsd
     ninja-build
     nmap
     ocrmypdf
@@ -57,7 +49,6 @@ APPS='
     rsync
     smartmontools
     sudo
-    syncthing
     tesseract-ocr
     tesseract-ocr-chi-sim
     tk-dev
@@ -67,8 +58,6 @@ APPS='
     vim
     wget
     wireguard-tools
-    yq
-    yt-dlp
     zoxide
 '
 
@@ -84,6 +73,10 @@ if [[ -n $XDG_CURRENT_DESKTOP || -n $DISPLAY || -n $WAYLAND_DISPLAY ]]; then
 fi
 
 sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://syncthing.net/release-key.gpg -o /etc/apt/keyrings/syncthing-archive-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable-v2" | sudo tee /etc/apt/sources.list.d/syncthing.list > /dev/null
+sudo apt update && sudo apt install -y syncthing
+
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 echo \
