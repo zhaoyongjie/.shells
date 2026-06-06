@@ -13,7 +13,6 @@ APPS_GUI='
 APPS='
     awscli
     bash-completion
-    bat
     btop
     build-essential
     ca-certificates
@@ -26,7 +25,6 @@ APPS='
     gawk
     gh
     git
-    git-delta
     golang
     httpie
     hyperfine
@@ -75,11 +73,8 @@ APPS='
 
 sudo apt update && sudo apt install -y $APPS
 
-sudo apt install -y eza || echo 'eza not in apt (Debian 12), skipping'
-
 mkdir -p $HOME/.local/bin
 [[ -x /usr/bin/fdfind && ! -e $HOME/.local/bin/fd ]] && ln -s /usr/bin/fdfind $HOME/.local/bin/fd
-[[ -x /usr/bin/batcat && ! -e $HOME/.local/bin/bat ]] && ln -s /usr/bin/batcat $HOME/.local/bin/bat
 
 # GUI apps, only on desktop machines (then run copy-settings.sh to link rime configs)
 if [[ -n $XDG_CURRENT_DESKTOP || -n $DISPLAY || -n $WAYLAND_DISPLAY ]]; then

@@ -19,13 +19,12 @@ APPS='
   asdf
   awscli
   bash
-  bat
   btop
   cmake
   coreutils
+  diffnav
   duckdb
   exiftool
-  eza
   fd
   ffmpeg
   findutils
@@ -34,7 +33,6 @@ APPS='
   gemini-cli
   gh
   git
-  git-delta
   gnu-sed
   gnu-tar
   go
@@ -47,7 +45,6 @@ APPS='
   make
   maven
   mtr
-  netcat
   ninja
   nmap
   ocrmypdf
