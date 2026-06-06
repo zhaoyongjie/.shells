@@ -8,6 +8,7 @@ fi
 APPS_GUI='
     fcitx5
     fcitx5-rime
+    mpv
 '
 
 APPS='

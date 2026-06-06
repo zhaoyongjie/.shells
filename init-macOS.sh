@@ -12,7 +12,6 @@ APPS_GUI='
   google-chrome
   iterm2
   skitch
-  vlc
 '
 
 APPS='
@@ -44,6 +43,7 @@ APPS='
   llama.cpp
   make
   maven
+  mpv
   mtr
   ninja
   nmap
@@ -81,7 +81,7 @@ else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-brew install --cask $APPS_GUI
+brew install --cask --adopt $APPS_GUI
 brew install $APPS
 
 if [[ ! -d $HOME/.pyenv ]]; then
