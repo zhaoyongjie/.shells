@@ -13,12 +13,5 @@
 [user]
     name = Yongjie Zhao
     email = yongjie.zhao@gmail.com
-
-[includeIf "gitdir:apache/superset"]
-    email = yongjie.zhao@gmail.com
 [http]
-	postBuffer = 157286400
-	lowSpeedLimit = 0
-	lowSpeedTime = 600
-[fetch]
-	timeout = 600
+    postBuffer = 157286400

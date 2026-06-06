@@ -76,6 +76,12 @@ mkdir -p $HOME/.local/bin
 [[ -x /usr/bin/fdfind && ! -e $HOME/.local/bin/fd ]] && ln -s /usr/bin/fdfind $HOME/.local/bin/fd
 [[ -x /usr/bin/batcat && ! -e $HOME/.local/bin/bat ]] && ln -s /usr/bin/batcat $HOME/.local/bin/bat
 
+# rime input method, only on desktop machines (then run copy-settings.sh to link configs)
+if [[ -n $XDG_CURRENT_DESKTOP || -n $DISPLAY || -n $WAYLAND_DISPLAY ]]; then
+    sudo apt install -y fcitx5 fcitx5-rime
+    command -v im-config >/dev/null 2>&1 && im-config -n fcitx5
+fi
+
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc

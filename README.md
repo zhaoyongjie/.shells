@@ -7,16 +7,22 @@ export WORK_PATH=$HOME/workspace
 source $HOME/.shells/.bashrc
 ```
 
-# Initialize the new Mac
+# Initialize a new machine
 
-The script can install the software through the Homebrew, edit init-osx.sh you can customize what you need to install.
-
-```
-make init.osx
-```
-
-# Collect the configuration file symbol link to the current user home.
+macOS (Homebrew, edit init-macOS.sh to customize):
 
 ```
-make install
+./init-macOS.sh
+```
+
+Debian 12/13:
+
+```
+./init-debian.sh
+```
+
+# Symlink the configuration files into the user home
+
+```
+./copy-settings.sh
 ```

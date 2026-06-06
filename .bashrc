@@ -42,6 +42,7 @@ $BREW_OPT/findutils/libexec/gnubin:\
 $BREW_OPT/coreutils/libexec/gnubin:\
 $GOBIN:\
 /usr/local/sbin:\
+$HOME/.local/bin:\
 $PATH"
 
     if /usr/libexec/java_home >/dev/null 2>&1; then
