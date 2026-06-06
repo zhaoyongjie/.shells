@@ -3,74 +3,74 @@ if [[ $(uname) != 'Darwin' ]]; then
     exit 1
 fi
 
-CASK_APPS='
-  docker-desktop
-  iterm2
-  google-chrome
-  firefox
-  skitch
-  vlc
+APPS_GUI='
+  chromedriver
   claude-code
   codex
-  chromedriver
+  docker-desktop
+  firefox
+  google-chrome
+  iterm2
+  skitch
+  vlc
 '
 
 APPS='
-  readline
-  git
+  asdf
+  awscli
   bash
-  coreutils
-  findutils
-  gnu-tar
-  gnu-sed
-  gawk
-  grep
-  make
-  tree
-  wget
-  rsync
-  tmux
-  httpie
-  nmap
-  netcat
-  mtr
-  tor
-  go
-  maven
-  duckdb
-  syncthing
-  ripgrep
-  fd
-  fzf
   bat
-  eza
-  jq
-  yq
-  zoxide
-  git-delta
-  gh
   btop
+  cmake
+  coreutils
+  duckdb
+  exiftool
+  eza
+  fd
+  ffmpeg
+  findutils
+  fzf
+  gawk
+  gemini-cli
+  gh
+  git
+  git-delta
+  gnu-sed
+  gnu-tar
+  go
+  grep
+  httpie
   hyperfine
+  imagemagick
+  jq
+  llama.cpp
+  make
+  maven
+  mtr
+  netcat
+  ninja
+  nmap
+  ocrmypdf
+  opencode
+  pandoc
   poppler
   qpdf
-  ocrmypdf
+  readline
+  ripgrep
+  rsync
+  rust
+  syncthing
   tesseract
   tesseract-lang
-  imagemagick
-  exiftool
-  pandoc
-  ffmpeg
-  gemini-cli
-  opencode
+  tmux
+  tor
+  tree
   uv
-  asdf
-  yt-dlp
-  llama.cpp
-  awscli
-  cmake
-  ninja
-  rust
+  wget
   wireguard-tools
+  yq
+  yt-dlp
+  zoxide
 '
 
 if ! command -v brew >/dev/null 2>&1; then
@@ -84,7 +84,7 @@ else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-brew install --cask $CASK_APPS
+brew install --cask $APPS_GUI
 brew install $APPS
 
 if [[ ! -d $HOME/.pyenv ]]; then

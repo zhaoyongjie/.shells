@@ -5,67 +5,72 @@ if [[ ! -f /etc/debian_version ]]; then
     exit 1
 fi
 
+APPS_GUI='
+    fcitx5
+    fcitx5-rime
+'
+
 APPS='
+    awscli
+    bash-completion
+    bat
+    btop
     build-essential
+    ca-certificates
+    cmake
+    curl
+    default-jdk
+    fd-find
+    ffmpeg
+    fzf
+    gawk
+    gh
+    git
+    git-delta
+    golang
+    httpie
+    hyperfine
+    imagemagick
+    jq
     libbz2-dev
-    libssl-dev
     libffi-dev
+    libfreetype6-dev
+    libimage-exiftool-perl
     libldap2-dev
+    liblzma-dev
+    libpng-dev
     libpq-dev
     libreadline-dev
-    libsqlite3-dev
-    libpng-dev
-    libfreetype6-dev
     libsasl2-dev
-    tk-dev
-    liblzma-dev
-    ca-certificates
-    curl
-    sudo
-    bash-completion
-    smartmontools
+    libsqlite3-dev
+    libssl-dev
     lm-sensors
-    git
-    vim
-    gawk
-    tree
-    wget
-    rsync
-    tmux
-    httpie
-    nmap
-    netcat-openbsd
-    mtr-tiny
-    tor
-    golang
     maven
-    default-jdk
-    cmake
+    mtr-tiny
+    netcat-openbsd
     ninja-build
-    awscli
-    syncthing
-    wireguard-tools
-    ripgrep
-    fd-find
-    fzf
-    bat
-    jq
-    yq
-    zoxide
-    git-delta
-    gh
-    btop
-    hyperfine
+    nmap
+    ocrmypdf
+    pandoc
     poppler-utils
     qpdf
-    ocrmypdf
+    ripgrep
+    rsync
+    smartmontools
+    sudo
+    syncthing
     tesseract-ocr
     tesseract-ocr-chi-sim
-    imagemagick
-    libimage-exiftool-perl
-    pandoc
-    ffmpeg
+    tk-dev
+    tmux
+    tor
+    tree
+    vim
+    wget
+    wireguard-tools
+    yq
     yt-dlp
+    zoxide
 '
 
 sudo apt update && sudo apt install -y $APPS
@@ -76,9 +81,9 @@ mkdir -p $HOME/.local/bin
 [[ -x /usr/bin/fdfind && ! -e $HOME/.local/bin/fd ]] && ln -s /usr/bin/fdfind $HOME/.local/bin/fd
 [[ -x /usr/bin/batcat && ! -e $HOME/.local/bin/bat ]] && ln -s /usr/bin/batcat $HOME/.local/bin/bat
 
-# rime input method, only on desktop machines (then run copy-settings.sh to link configs)
+# GUI apps, only on desktop machines (then run copy-settings.sh to link rime configs)
 if [[ -n $XDG_CURRENT_DESKTOP || -n $DISPLAY || -n $WAYLAND_DISPLAY ]]; then
-    sudo apt install -y fcitx5 fcitx5-rime
+    sudo apt install -y $APPS_GUI
     command -v im-config >/dev/null 2>&1 && im-config -n fcitx5
 fi
 
