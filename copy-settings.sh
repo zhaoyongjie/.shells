@@ -8,7 +8,6 @@ DOTFILES='
     .gitconfig
     .inputrc
     .tmux.conf
-    .npmrc
     .pip.conf
 '
 

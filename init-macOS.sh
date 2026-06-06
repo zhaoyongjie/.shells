@@ -73,7 +73,6 @@ APPS='
   wireguard-tools
 '
 
-# install homebrew
 if ! command -v brew >/dev/null 2>&1; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
@@ -88,7 +87,6 @@ fi
 brew install --cask $CASK_APPS
 brew install $APPS
 
-# install python
 if [[ ! -d $HOME/.pyenv ]]; then
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 fi
@@ -97,7 +95,6 @@ if [[ ! -d $HOME/.pyenv/plugins/pyenv-virtualenvwrapper ]]; then
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 fi
 
-# install node
 if [[ ! -d $HOME/.nvm ]]; then
     curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 fi
