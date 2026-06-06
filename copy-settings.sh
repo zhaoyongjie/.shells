@@ -22,6 +22,19 @@ for f in $DOTFILES; do
     fi
 done
 
+mkdir -p $HOME/.config
+if [[ -L $HOME/.config/starship.toml || ! -e $HOME/.config/starship.toml ]]; then
+    ln -sfn "$CURR_DIR/starship.toml" "$HOME/.config/starship.toml"
+    echo "linked $HOME/.config/starship.toml -> $CURR_DIR/starship.toml"
+fi
+
+if [[ -L $HOME/.config/mpv || ! -e $HOME/.config/mpv ]]; then
+    ln -sfn "$CURR_DIR/mpv" "$HOME/.config/mpv"
+    echo "linked $HOME/.config/mpv -> $CURR_DIR/mpv"
+else
+    echo "skipped $HOME/.config/mpv: real dir exists, move it away first"
+fi
+
 # rime / squirrel (macOS)
 RIME_DIR=$HOME/Library/Rime
 if [[ -d $RIME_DIR && (-L $RIME_DIR/default.custom.yaml || ! -e $RIME_DIR/default.custom.yaml) ]]; then

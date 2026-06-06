@@ -56,6 +56,7 @@ APPS='
   ripgrep
   rsync
   rust
+  starship
   syncthing
   tesseract
   tesseract-lang
@@ -67,6 +68,7 @@ APPS='
   wireguard-tools
   yq
   yt-dlp
+  zlib
   zoxide
 '
 

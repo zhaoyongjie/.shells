@@ -101,6 +101,10 @@ if ! command -v uv >/dev/null 2>&1; then
     curl -LsSf https://astral.sh/uv/install.sh | sh
 fi
 
+if ! command -v starship >/dev/null 2>&1; then
+    curl -sS https://starship.rs/install.sh | sh -s -- -y
+fi
+
 if ! command -v duckdb >/dev/null 2>&1; then
     curl -fsSL https://install.duckdb.org | sh
 fi

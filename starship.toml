@@ -1,0 +1,26 @@
+add_newline = false
+format = '${env_var.AWS_PROFILE}$python$username@:$directory$git_branch$character'
+
+[username]
+show_always = true
+format = '$user'
+
+[directory]
+format = '$path'
+truncation_length = 1
+
+[python]
+format = '\($virtualenv\)'
+detect_extensions = []
+detect_files = []
+detect_folders = []
+
+[git_branch]
+format = '\[$branch\]'
+
+[env_var.AWS_PROFILE]
+format = '\[aws:$env_value\]'
+
+[character]
+success_symbol = '\$'
+error_symbol = '\$'
