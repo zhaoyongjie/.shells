@@ -39,6 +39,14 @@ for f in CLAUDE.md settings.json; do
     fi
 done
 
+mkdir -p $HOME/.config/opencode $HOME/.codex
+for target in $HOME/.config/opencode/AGENTS.md $HOME/.codex/AGENTS.md; do
+    if [[ -L $target || ! -e $target ]]; then
+        ln -sfn "$CURR_DIR/claude/CLAUDE.md" "$target"
+        echo "linked $target -> $CURR_DIR/claude/CLAUDE.md"
+    fi
+done
+
 if [[ -L $HOME/.config/mpv || ! -e $HOME/.config/mpv ]]; then
     ln -sfn "$CURR_DIR/mpv" "$HOME/.config/mpv"
     echo "linked $HOME/.config/mpv -> $CURR_DIR/mpv"
