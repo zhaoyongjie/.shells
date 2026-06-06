@@ -12,8 +12,8 @@
     "pyright-lsp@claude-plugins-official": true,
     "duckdb-skills@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "aws-core@claude-plugins-official": true,
-    "aws-data-analytics@claude-plugins-official": true,
+    "aws-core@claude-plugins-official": false,
+    "aws-data-analytics@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true

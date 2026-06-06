@@ -86,6 +86,14 @@ fi
 brew install --cask --adopt $APPS_GUI
 brew install $APPS
 
+BREW_BASH=$HOMEBREW_PREFIX/bin/bash
+if ! grep -qx "$BREW_BASH" /etc/shells; then
+    echo "$BREW_BASH" | sudo tee -a /etc/shells
+fi
+if [[ $(dscl . -read /Users/$USER UserShell | awk '{print $2}') != "$BREW_BASH" ]]; then
+    chsh -s "$BREW_BASH"
+fi
+
 if [[ ! -d $HOME/.pyenv ]]; then
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 fi
