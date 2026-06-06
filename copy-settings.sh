@@ -28,6 +28,17 @@ if [[ -L $HOME/.config/starship.toml || ! -e $HOME/.config/starship.toml ]]; the
     echo "linked $HOME/.config/starship.toml -> $CURR_DIR/starship.toml"
 fi
 
+mkdir -p $HOME/.claude
+for f in CLAUDE.md settings.json; do
+    target=$HOME/.claude/$f
+    if [[ -L $target || ! -e $target ]]; then
+        ln -sfn "$CURR_DIR/claude/$f" "$target"
+        echo "linked $target -> $CURR_DIR/claude/$f"
+    else
+        echo "skipped $target: real file exists, move it away first"
+    fi
+done
+
 if [[ -L $HOME/.config/mpv || ! -e $HOME/.config/mpv ]]; then
     ln -sfn "$CURR_DIR/mpv" "$HOME/.config/mpv"
     echo "linked $HOME/.config/mpv -> $CURR_DIR/mpv"
