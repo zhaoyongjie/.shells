@@ -128,7 +128,13 @@ fi
 
 # fzf key bindings (Ctrl-R history, Ctrl-T files) and completion
 if [[ -x "$(command -v fzf)" ]]; then
-    eval "$(fzf --bash)"
+    FZF_INIT=$(fzf --bash 2>/dev/null)   # needs fzf >= 0.48
+    if [[ -n $FZF_INIT ]]; then
+        eval "$FZF_INIT"
+    elif [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]]; then
+        . /usr/share/doc/fzf/examples/key-bindings.bash   # debian 12 fallback
+    fi
+    unset FZF_INIT
 fi
 
 # zoxide: smarter cd, use `z <dir>` to jump

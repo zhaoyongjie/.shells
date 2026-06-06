@@ -28,12 +28,12 @@ APPS='
   make
   tree
   wget
+  rsync
   tmux
   httpie
   nmap
   netcat
   mtr
-  iproute2mac
   tor
   go
   maven
