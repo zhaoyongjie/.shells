@@ -2,11 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(belt *)",
+      "Bash(npm search *)",
+      "Bash(npm view *)",
+      "Bash(npx skills find *)",
+      "Bash(curl -s https://pypi.org/pypi/*)",
       "WebSearch",
       "WebFetch"
     ]
   },
-  "model": "claude-opus-4-8",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
@@ -16,7 +19,8 @@
     "aws-data-analytics@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "clickhouse-best-practices@claude-plugins-official": true
   },
   "theme": "dark-ansi"
 }

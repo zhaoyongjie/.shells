@@ -13,3 +13,4 @@ build
 .tox
 .cache/
 .idea/
+agent/skills/.system/

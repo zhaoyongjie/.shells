@@ -39,7 +39,17 @@ for f in CLAUDE.md settings.json; do
     fi
 done
 
-mkdir -p $HOME/.config/opencode $HOME/.codex
+mkdir -p $HOME/.agents $HOME/.codex
+for target in $HOME/.claude/skills $HOME/.agents/skills $HOME/.codex/skills; do
+    if [[ -L $target || ! -e $target ]]; then
+        ln -sfn "$CURR_DIR/agent/skills" "$target"
+        echo "linked $target -> $CURR_DIR/agent/skills"
+    else
+        echo "skipped $target: real dir exists, move it away first"
+    fi
+done
+
+mkdir -p $HOME/.config/opencode
 for target in $HOME/.config/opencode/AGENTS.md $HOME/.codex/AGENTS.md; do
     if [[ -L $target || ! -e $target ]]; then
         ln -sfn "$CURR_DIR/agent/CLAUDE.md" "$target"
