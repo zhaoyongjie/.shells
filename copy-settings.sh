@@ -28,32 +28,22 @@ if [[ -L $HOME/.config/starship.toml || ! -e $HOME/.config/starship.toml ]]; the
     echo "linked $HOME/.config/starship.toml -> $CURR_DIR/starship.toml"
 fi
 
-mkdir -p $HOME/.claude
-for f in CLAUDE.md settings.json; do
-    target=$HOME/.claude/$f
+mkdir -p $HOME/.claude $HOME/.agents $HOME/.codex $HOME/.config/opencode
+for pair in \
+    "$HOME/.claude/CLAUDE.md $CURR_DIR/agent/CLAUDE.md" \
+    "$HOME/.claude/settings.json $CURR_DIR/agent/settings.json" \
+    "$HOME/.claude/skills $CURR_DIR/agent/skills" \
+    "$HOME/.agents/skills $CURR_DIR/agent/skills" \
+    "$HOME/.codex/skills $CURR_DIR/agent/skills" \
+    "$HOME/.config/opencode/AGENTS.md $CURR_DIR/agent/CLAUDE.md" \
+    "$HOME/.codex/AGENTS.md $CURR_DIR/agent/CLAUDE.md"; do
+    target=${pair%% *}
+    src=${pair##* }
     if [[ -L $target || ! -e $target ]]; then
-        ln -sfn "$CURR_DIR/agent/$f" "$target"
-        echo "linked $target -> $CURR_DIR/agent/$f"
+        ln -sfn "$src" "$target"
+        echo "linked $target -> $src"
     else
         echo "skipped $target: real file exists, move it away first"
-    fi
-done
-
-mkdir -p $HOME/.agents $HOME/.codex
-for target in $HOME/.claude/skills $HOME/.agents/skills $HOME/.codex/skills; do
-    if [[ -L $target || ! -e $target ]]; then
-        ln -sfn "$CURR_DIR/agent/skills" "$target"
-        echo "linked $target -> $CURR_DIR/agent/skills"
-    else
-        echo "skipped $target: real dir exists, move it away first"
-    fi
-done
-
-mkdir -p $HOME/.config/opencode
-for target in $HOME/.config/opencode/AGENTS.md $HOME/.codex/AGENTS.md; do
-    if [[ -L $target || ! -e $target ]]; then
-        ln -sfn "$CURR_DIR/agent/CLAUDE.md" "$target"
-        echo "linked $target -> $CURR_DIR/agent/CLAUDE.md"
     fi
 done
 
