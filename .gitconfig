@@ -13,5 +13,7 @@
 [user]
     name = Yongjie Zhao
     email = yongjiezhao@apache.org
+[includeIf "gitdir:~/workspace/"]
+    path = ~/workspace/.gitconfig-bf
 [http]
     postBuffer = 157286400
