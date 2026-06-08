@@ -12,6 +12,6 @@
   ff = only
 [user]
     name = Yongjie Zhao
-    email = yongjie.zhao@gmail.com
+    email = yongjiezhao@apache.org
 [http]
     postBuffer = 157286400
