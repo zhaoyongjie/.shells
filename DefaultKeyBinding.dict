@@ -1,0 +1,13 @@
+// copy to ~/Library/KeyBindings/DefaultKeyBinding.dict
+{
+    "~f" = "moveWordForward:";
+    "~b" = "moveWordBackward:";
+    "~d" = "deleteWordForward:";
+
+    "~<" = "moveToBeginningOfDocument:";
+    "~>" = "moveToEndOfDocument:";
+
+    "~u" = "uppercaseWord:";
+    "~l" = "lowercaseWord:";
+    "~c" = "capitalizeWord:";
+}

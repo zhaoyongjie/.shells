@@ -54,6 +54,17 @@ else
     echo "skipped $HOME/.config/mpv: real dir exists, move it away first"
 fi
 
+if [[ $(uname) == 'Darwin' ]]; then
+    mkdir -p $HOME/Library/KeyBindings
+    target=$HOME/Library/KeyBindings/DefaultKeyBinding.dict
+    if [[ -L $target || ! -e $target ]]; then
+        ln -sfn "$CURR_DIR/DefaultKeyBinding.dict" "$target"
+        echo "linked $target -> $CURR_DIR/DefaultKeyBinding.dict"
+    else
+        echo "skipped $target: real file exists, move it away first"
+    fi
+fi
+
 # rime / squirrel (macOS)
 RIME_DIR=$HOME/Library/Rime
 if [[ -d $RIME_DIR && (-L $RIME_DIR/default.custom.yaml || ! -e $RIME_DIR/default.custom.yaml) ]]; then

@@ -4,14 +4,12 @@ if [[ $(uname) != 'Darwin' ]]; then
 fi
 
 APPS_GUI='
-  chromedriver
   claude-code
   codex
   docker-desktop
   firefox
   google-chrome
   iterm2
-  skitch
 '
 
 APPS='
@@ -20,6 +18,7 @@ APPS='
   bash
   btop
   cmake
+  chromedriver
   coreutils
   diffnav
   duckdb
