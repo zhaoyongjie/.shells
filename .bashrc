@@ -33,7 +33,6 @@ if [[ $OS == 'Darwin' ]]; then
     fi
     BREW_OPT=$HOMEBREW_PREFIX/opt
 
-    export GOBIN=$HOME/go/bin
     export MANPATH="$BREW_OPT/coreutils/libexec/gnuman:$MANPATH"
     export PATH="\
 $BREW_OPT/grep/libexec/gnubin:\
@@ -41,13 +40,11 @@ $BREW_OPT/gnu-tar/libexec/gnubin:\
 $BREW_OPT/gnu-sed/libexec/gnubin:\
 $BREW_OPT/findutils/libexec/gnubin:\
 $BREW_OPT/coreutils/libexec/gnubin:\
-$GOBIN:\
 /usr/local/sbin:\
-$HOME/.local/bin:\
 $PATH"
 
-    if /usr/libexec/java_home >/dev/null 2>&1; then
-        export JAVA_HOME=$(/usr/libexec/java_home)
+    if [[ -d $BREW_OPT/openjdk@17 ]]; then
+        export JAVA_HOME=$BREW_OPT/openjdk@17/libexec/openjdk.jdk/Contents/Home
         export PATH="$JAVA_HOME/bin:$PATH"
     fi
 
@@ -58,11 +55,9 @@ $PATH"
         export PKG_CONFIG_PATH="$BREW_OPT/openssl@3/lib/pkgconfig"
     fi
 
-    # bash-completion@2 (bash 4+) or v1 fallback
+    # bash-completion@2 (bash 4+)
     if [[ -f $HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh ]]; then
         . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
-    elif [[ -f $HOMEBREW_PREFIX/etc/bash_completion ]]; then
-        . "$HOMEBREW_PREFIX/etc/bash_completion"
     fi
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -95,7 +90,8 @@ fi
 
 # ======== cross-platform PATH ========
 
-export PATH="$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
+export GOBIN=$HOME/go/bin
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.opencode/bin:$GOBIN:$PATH"
 
 if [[ -d ${ASDF_DATA_DIR:-$HOME/.asdf}/shims ]]; then
     export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

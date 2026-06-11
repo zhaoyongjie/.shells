@@ -49,6 +49,7 @@ APPS='
   nmap
   ocrmypdf
   opencode
+  openjdk@17
   pandoc
   poppler
   qpdf
