@@ -16,6 +16,7 @@ APPS='
   asdf
   awscli
   bash
+  bash-completion@2
   btop
   cmake
   chromedriver
