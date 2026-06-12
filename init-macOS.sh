@@ -4,7 +4,7 @@ if [[ $(uname) != 'Darwin' ]]; then
 fi
 
 APPS_GUI='
-  claude-code
+  claude-code@latest
   codex
   docker-desktop
   firefox
