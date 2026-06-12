@@ -135,13 +135,13 @@ if [[ -x "$(command -v fzf)" ]]; then
     unset FZF_INIT
 fi
 
+if [[ -x "$(command -v starship)" ]]; then
+    eval "$(starship init bash)"
+fi
+
 # zoxide: smarter cd, use `z <dir>` to jump
 if [[ -x "$(command -v zoxide)" ]]; then
     eval "$(zoxide init bash)"
-fi
-
-if [[ -x "$(command -v starship)" ]]; then
-    eval "$(starship init bash)"
 fi
 
 # ======== aliases ========
