@@ -29,7 +29,6 @@ APPS='
   findutils
   fzf
   gawk
-  gemini-cli
   gh
   git
   gnu-sed

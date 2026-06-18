@@ -22,5 +22,10 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "clickhouse-best-practices@claude-plugins-official": true
   },
+  "model": "claude-opus-4-8",
+  "env": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-6",
+    "DISABLE_AUTOUPDATER": "1"
+  },
   "theme": "dark-ansi"
 }
