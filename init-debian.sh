@@ -58,7 +58,6 @@ APPS='
     vim
     wget
     wireguard-tools
-    zoxide
 '
 
 sudo apt update && sudo apt install -y $APPS

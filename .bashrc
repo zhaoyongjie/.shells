@@ -139,11 +139,6 @@ if [[ -x "$(command -v starship)" ]]; then
     eval "$(starship init bash)"
 fi
 
-# zoxide: smarter cd, use `z <dir>` to jump
-if [[ -x "$(command -v zoxide)" ]]; then
-    eval "$(zoxide init bash)"
-fi
-
 # ======== aliases ========
 
 # on macOS gnubin puts GNU grep/ls first, so flags work on both platforms
