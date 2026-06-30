@@ -98,8 +98,9 @@ if [[ -d ${ASDF_DATA_DIR:-$HOME/.asdf}/shims ]]; then
     export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi
 
-# ======== pyenv ========
+# ======== pyenv & uv ========
 
+export UV_VENV_SEED=1
 export PYENV_ROOT="$HOME/.pyenv"
 if [[ -d $PYENV_ROOT ]]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
