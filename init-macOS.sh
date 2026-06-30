@@ -55,7 +55,7 @@ APPS='
   readline
   ripgrep
   rsync
-  rust
+  rustup
   starship
   syncthing
   tesseract

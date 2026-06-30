@@ -63,6 +63,20 @@ if [[ $(uname) == 'Darwin' ]]; then
     else
         echo "skipped $target: real file exists, move it away first"
     fi
+
+    zed_cli="/Applications/Zed.app/Contents/MacOS/cli"
+    target=$HOME/.local/bin/zed
+    if [[ ! -e $zed_cli ]]; then
+        echo "skipped $target: $zed_cli not found (Zed not installed?)"
+    else
+        mkdir -p $HOME/.local/bin
+        if [[ -L $target || ! -e $target ]]; then
+            ln -sfn "$zed_cli" "$target"
+            echo "linked $target -> $zed_cli"
+        else
+            echo "skipped $target: real file exists, move it away first"
+        fi
+    fi
 fi
 
 # rime / squirrel (macOS)

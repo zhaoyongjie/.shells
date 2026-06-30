@@ -40,6 +40,7 @@ $BREW_OPT/gnu-tar/libexec/gnubin:\
 $BREW_OPT/gnu-sed/libexec/gnubin:\
 $BREW_OPT/findutils/libexec/gnubin:\
 $BREW_OPT/coreutils/libexec/gnubin:\
+$BREW_OPT/rustup/bin:\
 /usr/local/sbin:\
 $PATH"
 
