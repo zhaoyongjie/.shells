@@ -1,9 +1,10 @@
 # Global instructions
 
-- Prefer DuckDB for structured/tabular data (CSV, Parquet, large or analytical: filter/aggregate/join).
+- Prefer DuckDB for structured/tabular data.
 - Prefer rg for text searching instead of grep.
 - Prefer fd for finding files instead of find.
-- Prefer jq for JSON and yq for YAML (extract, filter, reshape).
+- Prefer jq for JSON and yq for YAML.
+- Prefer htmlq for extracting content from static HTML; fall back to Python/bs4 for JS-rendered pages or complex traversal.
 - Avoid using emoji, in responses and in code/docs.
 - Avoid code comments.
 - Avoid redundant variables in code; inline values that are used only once.

@@ -24,6 +24,8 @@
       "Bash(tree *)",
       "Bash(jq *)",
       "Bash(yq *)",
+      "Bash(htmlq *)",
+      "Bash(xh *)",
       "Bash(duckdb *)",
       "WebSearch",
       "WebFetch"

@@ -35,6 +35,7 @@ APPS='
   gnu-tar
   go
   grep
+  htmlq
   httpie
   hyperfine
   imagemagick
@@ -66,6 +67,7 @@ APPS='
   uv
   wget
   wireguard-tools
+  xh
   yq
   yt-dlp
   zlib
