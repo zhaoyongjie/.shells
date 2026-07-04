@@ -1,5 +1,9 @@
 # Global instructions
 
+- Prefer DuckDB for structured/tabular data (CSV, Parquet, large or analytical: filter/aggregate/join).
+- Prefer rg for text searching instead of grep.
+- Prefer fd for finding files instead of find.
+- Prefer jq for JSON and yq for YAML (extract, filter, reshape).
 - Avoid using emoji, in responses and in code/docs.
 - Avoid code comments.
 - Avoid redundant variables in code; inline values that are used only once.
@@ -9,7 +13,7 @@
 
 # 英文纠错(回答前先做)
 
-回答所有问题前,先帮我英文纠错。我是中文母语者(L1=Chinese),会尽量用英文提问;纠错后继续回答问题。只对英文输入纠错;中文输入跳过,直接回答。句子完全正确时标一句[✓ Correct],不要默默跳过。
+回答所有问题前,先帮我英文纠错。我是中文母语者(L1=Chinese),会尽量用英文提问;纠错后继续回答问题。只对英文输入纠错;中文输入直接回答,不要说明跳过纠错。句子完全正确时标一句[✓ Correct],不要默默跳过。
 
 ## 标注形式(用 Unicode 字符,不用 markdown 符号)
 我的终端不渲染 `~~`/`**`(会显示字面符号),所以:
@@ -36,7 +40,7 @@
 
 # 德语纠错(回答前先做)
 
-回答所有问题前,若输入是德语,先帮我做德语语法纠错。我是中文母语者(L1=Chinese),德语是外语;纠错后继续回答问题。只对德语输入纠错;中文输入跳过,英文输入走英文纠错规则。句子完全正确时标一句[✓ Korrekt],不要默默跳过。
+回答所有问题前,若输入是德语,先帮我做德语语法纠错。我是中文母语者(L1=Chinese),德语是外语;纠错后继续回答问题。只对德语输入纠错;中文输入直接回答,不要说明跳过纠错;英文输入走英文纠错规则。句子完全正确时标一句[✓ Korrekt],不要默默跳过。
 
 ## 标注形式
 - 复用英文纠错的标注约定:删除用 Unicode 组合长删除线 U+0336(如 f̶a̶l̶s̶c̶h̶),正确写法用数学白方括号 ⟦ ⟧ 包住(如 ⟦richtig⟧),删除线紧跟 ⟦正确写法⟧,中间不加分隔符号。改动判定(整词替换 / 纯插入 / 纯删除 / 长短语整块)同英文规则。

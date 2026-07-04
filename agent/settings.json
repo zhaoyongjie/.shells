@@ -1,4 +1,8 @@
 {
+  "env": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-6",
+    "DISABLE_AUTOUPDATER": "1"
+  },
   "permissions": {
     "allow": [
       "Bash(belt *)",
@@ -6,10 +10,26 @@
       "Bash(npm view *)",
       "Bash(npx skills find *)",
       "Bash(curl -s https://pypi.org/pypi/*)",
+      "Bash(pdftotext *)",
+      "Bash(xxd)",
+      "Bash(rg *)",
+      "Bash(fd *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(file *)",
+      "Bash(stat *)",
+      "Bash(tree *)",
+      "Bash(jq *)",
+      "Bash(yq *)",
+      "Bash(duckdb *)",
       "WebSearch",
       "WebFetch"
     ]
   },
+  "model": "opus[1m]",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
@@ -21,11 +41,6 @@
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "clickhouse-best-practices@claude-plugins-official": true
-  },
-  "model": "claude-opus-4-8",
-  "env": {
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-sonnet-4-6",
-    "DISABLE_AUTOUPDATER": "1"
   },
   "theme": "dark-ansi"
 }
