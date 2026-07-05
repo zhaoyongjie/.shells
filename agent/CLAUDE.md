@@ -1,5 +1,7 @@
 # Global instructions
 
+- For Python, invoke the global interpreter at $GLOBAL_PYTHON_PATH.
+- For Node, invoke the global runtime at $GLOBAL_NODE_PATH.
 - Prefer DuckDB for structured/tabular data.
 - Prefer rg for text searching instead of grep.
 - Prefer fd for finding files instead of find.
@@ -9,8 +11,6 @@
 - Avoid code comments.
 - Avoid redundant variables in code; inline values that are used only once.
 - When changing logic, do not reformat the file; keep the diff minimal and touch only the lines that need to change.
-- For Python, invoke the global interpreter at $GLOBAL_PYTHON_PATH.
-- For Node, invoke the global runtime at $GLOBAL_NODE_PATH.
 
 ----
 
