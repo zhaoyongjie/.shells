@@ -4,7 +4,6 @@ git-envs
 *.pyo
 .env
 env
-env*
 dist
 build
 *.egg
