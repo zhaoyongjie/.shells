@@ -3,6 +3,8 @@ if [[ $(uname) != 'Darwin' ]]; then
     exit 1
 fi
 
+source "$(dirname "$0")/environments.sh"
+
 APPS_GUI='
   claude-code@latest
   codex
@@ -10,6 +12,7 @@ APPS_GUI='
   firefox
   google-chrome
   iterm2
+  iina
 '
 
 APPS='
@@ -98,7 +101,8 @@ fi
 if [[ ! -d $HOME/.pyenv ]]; then
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 fi
-$HOME/.pyenv/bin/pyenv install -s 3.12
+$HOME/.pyenv/bin/pyenv install -s "$GLOBAL_PYTHON_VERSION"
+$HOME/.pyenv/bin/pyenv global "$GLOBAL_PYTHON_VERSION"
 if [[ ! -d $HOME/.pyenv/plugins/pyenv-virtualenvwrapper ]]; then
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 fi
@@ -106,6 +110,10 @@ fi
 if [[ ! -d $HOME/.nvm ]]; then
     curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install "$GLOBAL_NODE_VERSION"
+nvm alias default "$GLOBAL_NODE_VERSION"
 
 read -p "Are you want auto starting syncthing? (y/n) " -n 1 -r
 echo    # (optional) move to a new line

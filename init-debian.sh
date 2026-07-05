@@ -5,6 +5,8 @@ if [[ ! -f /etc/debian_version ]]; then
     exit 1
 fi
 
+source "$(dirname "$0")/environments.sh"
+
 APPS_GUI='
     fcitx5
     fcitx5-rime
@@ -87,7 +89,8 @@ sudo usermod -aG docker $USER
 if [[ ! -d $HOME/.pyenv ]]; then
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 fi
-$HOME/.pyenv/bin/pyenv install -s 3.12
+$HOME/.pyenv/bin/pyenv install -s "$GLOBAL_PYTHON_VERSION"
+$HOME/.pyenv/bin/pyenv global "$GLOBAL_PYTHON_VERSION"
 if [[ ! -d $HOME/.pyenv/plugins/pyenv-virtualenvwrapper ]]; then
     git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $HOME/.pyenv/plugins/pyenv-virtualenvwrapper
 fi
@@ -95,6 +98,10 @@ fi
 if [[ ! -d $HOME/.nvm ]]; then
     curl -L https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install "$GLOBAL_NODE_VERSION"
+nvm alias default "$GLOBAL_NODE_VERSION"
 
 if ! command -v uv >/dev/null 2>&1; then
     curl -LsSf https://astral.sh/uv/install.sh | sh

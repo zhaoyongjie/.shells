@@ -22,6 +22,8 @@ export PS1='\u@:\W$ '
 
 OS=$(uname)
 
+source ~/.shells/environments.sh
+
 # ======== macOS ========
 
 if [[ $OS == 'Darwin' ]]; then
@@ -105,13 +107,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 if [[ -d $PYENV_ROOT ]]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
-    # pyenv remembers its global version; only override when explicitly asked
-    if [[ -n $PYTHON_GLOBAL_VERSION ]]; then
-        pyenv global $PYTHON_GLOBAL_VERSION
-    fi
-    if [[ -d $PYENV_ROOT/plugins/pyenv-virtualenvwrapper ]]; then
-        pyenv virtualenvwrapper
-    fi
+    pyenv virtualenvwrapper
     export PIP_CONFIG_FILE=$HOME/.shells/.pip.conf
     export WORKON_HOME=$HOME/.virtualenvs
 fi
