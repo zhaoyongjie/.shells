@@ -64,8 +64,6 @@ $PATH"
     fi
     export BASH_SILENCE_DEPRECATION_WARNING=1
 
-    # `open <file>` opens text files in Sublime Text (override with $GUI_EDITOR);
-    # apps, dirs, URLs and binary files still go to the system open
     function open() {
         local f
         [[ $# -eq 0 ]] && { command open; return; }
@@ -75,7 +73,7 @@ $PATH"
                 return
             fi
         done
-        command open -a "${GUI_EDITOR:-Sublime Text}" "$@"
+        command open -a "${GUI_EDITOR:-Zed}" "$@"
     }
 fi
 

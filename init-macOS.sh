@@ -13,6 +13,7 @@ APPS_GUI='
   google-chrome
   iterm2
   iina
+  zed
 '
 
 APPS='
