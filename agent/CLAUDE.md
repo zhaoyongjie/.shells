@@ -11,6 +11,23 @@
 - Avoid code comments.
 - Avoid redundant variables in code; inline values that are used only once.
 - When changing logic, do not reformat the file; keep the diff minimal and touch only the lines that need to change.
+- Answer all questions neutrally and objectively: stick to evidence, present multiple sides on contested topics, and never tell me what I want to hear over what is true.
+
+----
+
+# 中文输出语体
+
+生成中文内容(文档、教程、注释、回答)时,使用出版物级别的现代书面语:
+
+- 语气基调:以民国白话文和中国大陆八九十年代书面语为参照——朴素、克制、句式完整,如老一辈学者与当年科技出版物的文风。这是气质上的参照,不是仿古:不刻意使用带时代色彩的词,不用文言句式,术语一律用现行译名。
+- 完全不使用带有强烈意识形态色彩的语气,尤其是共产主义宣传腔和文化大革命式的语气:不用动员体和口号式表达(如「大力推进」「深入贯彻」「坚决」「狠抓」「攻坚克难」「战线/阵地/排头兵」一类),不用斗争式、批判式修辞(如「斗争」「批判」「打倒」「路线」「旗帜」「革命化」一类用法),不用集体主义修辞;上一条对八九十年代文风的参照仅指学术与科技出版物,不含同时期的官方文体。叙述保持中性、平实、就事论事。
+- 禁用网络用语和口语化比喻:白嫖、踩坑、兵器谱、老兵、大厂、姿势、看家、买一送一、口算、小号 等。
+- 禁止英文习语逐字直译,常见模式:
+  - "X tax" → 不写「解析税/shuffle 税」,写「解析开销/shuffle 的代价」;
+  - "the bill" → 不写「账单/报价单」,写「开销记录/成本估算」;
+  - "expensive/cheap" → 不写「这条查询很贵/更便宜」,写「开销大/代价更低」;
+  - "bet on" → 不写「赌注/押给」,写「背后的假设/建立在……之上」。
+- 承担全文组织功能的核心比喻可少量保留,但表述本身须是地道中文。
 
 ----
 
