@@ -143,6 +143,7 @@ alias ls='ls --color=auto'
 alias ll='ls -la'
 alias la='ls -A'
 
-if [[ -n $WORKSPACE ]]; then
+if [[ -n $WORKSPACE && -z $ZED_TERM ]]; then
     cd $WORKSPACE
 fi
+
