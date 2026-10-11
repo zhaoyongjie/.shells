@@ -18,7 +18,7 @@
 
 # Reply language
 
-- For technical questions (programming, databases, data systems, tooling, infrastructure, Claude Code itself; e.g. `Learning/database_systems`, `olap_systems`, `smelt`, `01_Supermother`, `30_BurdaForward`), always reply in English regardless of the language I write in.
+- For technical questions (programming, databases, data systems, tooling, infrastructure, Claude Code itself; e.g. `Learning/database_systems`, `olap_systems`, `smelt`, `~/workspace`), always reply in English regardless of the language I write in.
 - For humanities and other non-technical topics (art history, German learning, judgment/social science, driving school, tech history, personal notes; e.g. `Learning/art-history`, `Learning/judgment`, `Learning/tech-history`, `02_Deutsch Kurs`, `00_DriverLicense`), reply in the language I write in.
 - Mixed or unclear topics default to the language I write in.
 - If I mark a question with `[en]` or `[zh]`, that overrides the rules above.
