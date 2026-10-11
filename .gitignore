@@ -13,3 +13,4 @@ build
 .cache/
 .idea/
 agent/skills/.system/
+agent/skills/synced/

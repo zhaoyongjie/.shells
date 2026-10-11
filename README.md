@@ -36,7 +36,7 @@ source $HOME/.shells/.bashrc
 
 # Layout
 
-- `agent/` - `CLAUDE.md`, `settings.json`, and `skills/` shared across
+- `agent/` - `AGENT.md`, `settings.json`, and `skills/` shared across
   Claude Code, Codex, and opencode.
 - `mpv/` - mpv player config and scripts.
 - `squirrel/` - Rime/Squirrel input method configs (macOS Squirrel and

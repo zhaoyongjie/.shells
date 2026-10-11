@@ -12,6 +12,17 @@
 - Avoid redundant variables in code; inline values that are used only once.
 - When changing logic, do not reformat the file; keep the diff minimal and touch only the lines that need to change.
 - Answer all questions neutrally and objectively: stick to evidence, present multiple sides on contested topics, and never tell me what I want to hear over what is true.
+- 概念性问题不要联系到具体环境。
+
+----
+
+# Reply language
+
+- For technical questions (programming, databases, data systems, tooling, infrastructure, Claude Code itself; e.g. `Learning/database_systems`, `olap_systems`, `smelt`, `01_Supermother`, `30_BurdaForward`), always reply in English regardless of the language I write in.
+- For humanities and other non-technical topics (art history, German learning, judgment/social science, driving school, tech history, personal notes; e.g. `Learning/art-history`, `Learning/judgment`, `Learning/tech-history`, `02_Deutsch Kurs`, `00_DriverLicense`), reply in the language I write in.
+- Mixed or unclear topics default to the language I write in.
+- If I mark a question with `[en]` or `[zh]`, that overrides the rules above.
+- The Chinese-publication style rule below applies whenever the output is Chinese.
 
 ----
 

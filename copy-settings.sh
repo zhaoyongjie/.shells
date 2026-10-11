@@ -30,13 +30,13 @@ fi
 
 mkdir -p $HOME/.claude $HOME/.agents $HOME/.codex $HOME/.config/opencode
 for pair in \
-    "$HOME/.claude/CLAUDE.md $CURR_DIR/agent/CLAUDE.md" \
+    "$HOME/.claude/CLAUDE.md $CURR_DIR/agent/AGENT.md" \
     "$HOME/.claude/settings.json $CURR_DIR/agent/settings.json" \
     "$HOME/.claude/skills $CURR_DIR/agent/skills" \
     "$HOME/.agents/skills $CURR_DIR/agent/skills" \
     "$HOME/.codex/skills $CURR_DIR/agent/skills" \
-    "$HOME/.config/opencode/AGENTS.md $CURR_DIR/agent/CLAUDE.md" \
-    "$HOME/.codex/AGENTS.md $CURR_DIR/agent/CLAUDE.md"; do
+    "$HOME/.config/opencode/AGENTS.md $CURR_DIR/agent/AGENT.md" \
+    "$HOME/.codex/AGENTS.md $CURR_DIR/agent/AGENT.md"; do
     target=${pair%% *}
     src=${pair##* }
     if [[ -L $target || ! -e $target ]]; then
