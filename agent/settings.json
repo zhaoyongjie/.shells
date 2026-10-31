@@ -31,7 +31,7 @@
       "WebFetch"
     ]
   },
-  "model": "fable",
+  "model": "sonnet",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
@@ -50,7 +50,10 @@
       "effortLevel": "low"
     },
     "claude-opus-5-5": {
-      "effortLevel": "medium"
+      "effortLevel": "low"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "low"
     }
   },
   "theme": "dark-ansi"
